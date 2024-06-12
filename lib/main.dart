@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         body: Center(
-          child: ElevatedButton(
+          child: OutlinedButton(
               onPressed: () {
                 print("Hi Tushar");
               },
