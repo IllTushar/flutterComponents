@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         body: Center(
-          child: OutlinedButton(
+          child: TextButton(
               onPressed: () {
                 print("Hi Tushar");
               },
