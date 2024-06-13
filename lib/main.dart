@@ -21,12 +21,10 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         body: Center(
-          child: TextButton(
-              onPressed: () {
-                print("Hi Tushar");
-              },
-              child: const Text("Click Here!!")),
-        ),
+            child: Container(
+                width: 270,
+                height: 270,
+                child: Image.asset('assets/images/image.jpeg'))),
       ),
     );
   }
