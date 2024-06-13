@@ -16,15 +16,43 @@ class MyApp extends StatelessWidget {
           title: const Text(
             "Flutter App!!",
             style: TextStyle(
-                fontWeight: FontWeight.w100, color: Colors.deepOrange),
+                fontWeight: FontWeight.w800, color: Colors.orange),
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Center(
-            child: Container(
-                width: 270,
-                height: 270,
-                child: Image.asset('assets/images/image.jpeg'))),
+        body: Container(
+          height: 500,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text("C1"),
+                  Text("C1"),
+                  Text("C1"),
+                  Text("C1"),
+                  ElevatedButton(
+                      onPressed: () {
+                        print("Tap Column");
+                      },
+                      child: const Text("Click Here"))
+                ],
+              ),
+              Text("R1"),
+              Text("R2"),
+              Text("R3"),
+              Text("R4"),
+              ElevatedButton(
+                  onPressed: () {
+                    print("Tap");
+                  },
+                  child: const Text("Click Here"))
+            ],
+          ),
+        ),
       ),
     );
   }
