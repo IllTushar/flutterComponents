@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,23 +18,31 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text(
               "Flutter App!!",
-              style:
+              style:    
                   TextStyle(fontWeight: FontWeight.w800, color: Colors.orange),
             ),
             backgroundColor: Colors.blue,
           ),
           //ListView.builder is used to like recyclerview
-          body: ListView.separated(
-            itemBuilder: (context, index) {
-              return Text(
-                listView[index],
-                style: TextStyle(fontSize: 20),
-              );
-            },
-            itemCount: listView.length,
-            separatorBuilder: (context,index){
-              return Divider(thickness: 4,height: 4,);
-            },
+          body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: Center(
+              child: Container(
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                    color: Colors.orangeAccent,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20)),
+                    border: Border.all(color: Colors.black, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey, blurRadius: 51, spreadRadius: 7)
+                    ]),
+              ),
+            ),
           )),
     );
   }
