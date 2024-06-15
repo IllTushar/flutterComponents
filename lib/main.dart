@@ -15,42 +15,80 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             "Flutter App!!",
-            style: TextStyle(
-                fontWeight: FontWeight.w800, color: Colors.orange),
+            style: TextStyle(fontWeight: FontWeight.w800, color: Colors.orange),
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Container(
-          height: 500,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text("C1"),
-                  Text("C1"),
-                  Text("C1"),
-                  Text("C1"),
-                  ElevatedButton(
-                      onPressed: () {
-                        print("Tap Column");
-                      },
-                      child: const Text("Click Here"))
+        body: Center(
+          child: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 300,
+                          height: 200,
+                          margin: const EdgeInsets.all(20.0),
+                          color: Colors.orange,
+                        ),
+                        Container(
+                          width: 300,
+                          height: 200,
+                          margin: const EdgeInsets.all(20.0),
+                          color: Colors.pink,
+                        ),
+                        Container(
+                          width: 300,
+                          height: 200,
+                          margin: const EdgeInsets.all(20.0),
+                          color: Colors.blue,
+                        ),
+                        Container(
+                          width: 300,
+                          height: 200,
+                          margin: const EdgeInsets.all(20.0),
+                          color: Colors.green,
+                        ),
+                        Container(
+                          width: 300,
+                          height: 200,
+                          margin: const EdgeInsets.all(20.0),
+                          color: Colors.red,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 200,
+                    margin: const EdgeInsets.all(20.0),
+                    color: Colors.orange,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: const EdgeInsets.all(20.0),
+                    color: Colors.pink,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: const EdgeInsets.all(20.0),
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: const EdgeInsets.all(20.0),
+                    color: Colors.green,
+                  ),
+                  Container(
+                    height: 200,
+                    margin: const EdgeInsets.all(20.0),
+                    color: Colors.red,
+                  ),
                 ],
               ),
-              Text("R1"),
-              Text("R2"),
-              Text("R3"),
-              Text("R4"),
-              ElevatedButton(
-                  onPressed: () {
-                    print("Tap");
-                  },
-                  child: const Text("Click Here"))
-            ],
+            ),
           ),
         ),
       ),
