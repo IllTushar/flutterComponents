@@ -10,26 +10,28 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var listView = ['Ram', "Mohan", "Rohit", "Sohan"];
     return SafeArea(
       child: Scaffold(
-
-        appBar: AppBar(
-          title: const Text(
-            "Flutter App!!",
-            style: TextStyle(fontWeight: FontWeight.w800, color: Colors.orange),
+          appBar: AppBar(
+            title: const Text(
+              "Flutter App!!",
+              style:
+                  TextStyle(fontWeight: FontWeight.w800, color: Colors.orange),
+            ),
+            backgroundColor: Colors.blue,
           ),
-          backgroundColor: Colors.blue,
-        ),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            Text("Ram",style: TextStyle(fontSize: 50,),),
-            Text("Shyam",style: TextStyle(fontSize: 50),),
-            Text("Rohan",style: TextStyle(fontSize: 50),),
-            Text("Rohit",style: TextStyle(fontSize: 50),),
-          ],
-        ),
-      ),
+          //ListView.builder is used to like recyclerview
+          body: ListView.builder(
+            itemBuilder: (context, index) {
+              return Text(
+                listView[index],
+                style: TextStyle(fontSize: 20),
+              );
+            },
+            itemCount: listView.length,
+            itemExtent: 100,
+          )),
     );
   }
 }
