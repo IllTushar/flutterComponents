@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.blue,
           ),
           //ListView.builder is used to like recyclerview
-          body: ListView.builder(
+          body: ListView.separated(
             itemBuilder: (context, index) {
               return Text(
                 listView[index],
@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
               );
             },
             itemCount: listView.length,
-            itemExtent: 100,
+            separatorBuilder: (context,index){
+              return Divider(thickness: 4,height: 4,);
+            },
           )),
     );
   }
