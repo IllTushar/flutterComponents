@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+
         appBar: AppBar(
           title: const Text(
             "Flutter App!!",
@@ -19,77 +20,14 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Center(
-          child: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 300,
-                          height: 200,
-                          margin: const EdgeInsets.all(20.0),
-                          color: Colors.orange,
-                        ),
-                        Container(
-                          width: 300,
-                          height: 200,
-                          margin: const EdgeInsets.all(20.0),
-                          color: Colors.pink,
-                        ),
-                        Container(
-                          width: 300,
-                          height: 200,
-                          margin: const EdgeInsets.all(20.0),
-                          color: Colors.blue,
-                        ),
-                        Container(
-                          width: 300,
-                          height: 200,
-                          margin: const EdgeInsets.all(20.0),
-                          color: Colors.green,
-                        ),
-                        Container(
-                          width: 300,
-                          height: 200,
-                          margin: const EdgeInsets.all(20.0),
-                          color: Colors.red,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 200,
-                    margin: const EdgeInsets.all(20.0),
-                    color: Colors.orange,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: const EdgeInsets.all(20.0),
-                    color: Colors.pink,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: const EdgeInsets.all(20.0),
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: const EdgeInsets.all(20.0),
-                    color: Colors.green,
-                  ),
-                  Container(
-                    height: 200,
-                    margin: const EdgeInsets.all(20.0),
-                    color: Colors.red,
-                  ),
-                ],
-              ),
-            ),
-          ),
+        body: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Text("Ram",style: TextStyle(fontSize: 50,),),
+            Text("Shyam",style: TextStyle(fontSize: 50),),
+            Text("Rohan",style: TextStyle(fontSize: 50),),
+            Text("Rohit",style: TextStyle(fontSize: 50),),
+          ],
         ),
       ),
     );
