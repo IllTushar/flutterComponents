@@ -28,7 +28,14 @@ class MyApp extends StatelessWidget {
             child: ListView.separated(
                 itemBuilder: (context, index) {
                   return ListTile(
-                    leading: Text("${index + 1}",style: TextStyle(fontSize: 16),),
+                    leading: Container(
+                      width: 50,
+                      height: 50,
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage("assets/images/image.jpeg"),
+                        radius: 50,
+                      ),
+                    ),
                     title: Text("${listView[index]}"),
                     subtitle: Text("subtitle"),
                     trailing: Icon(Icons.add),
