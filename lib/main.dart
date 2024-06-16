@@ -25,19 +25,23 @@ class MyApp extends StatelessWidget {
           ),
           //ListView.builder is used to like recyclerview
           body: Container(
-            width: double.infinity,
-            height: double.infinity,
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                Expanded(flex:2,child: Container(width: 100,height: 90,color: Colors.red,)),
-                Expanded(flex:5,child: Container(width: 100,height: 90,color: Colors.yellow,)),
-                Expanded(flex:5,child: Container(width: 100,height: 90,color: Colors.cyan,)),
-                Expanded(flex:2,child: Container(width: 100,height: 90,color: Colors.green,))
-
-              ]),
-            ),
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: Text("${index + 1}",style: TextStyle(fontSize: 16),),
+                    title: Text("${listView[index]}"),
+                    subtitle: Text("subtitle"),
+                    trailing: Icon(Icons.add),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return Divider(
+                    height: 2,
+                    thickness: 1,
+                    color: Colors.grey,
+                  );
+                },
+                itemCount: listView.length),
           )),
     );
   }
