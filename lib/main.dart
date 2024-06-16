@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text(
               "Flutter App!!",
-              style:    
+              style:
                   TextStyle(fontWeight: FontWeight.w800, color: Colors.orange),
             ),
             backgroundColor: Colors.blue,
@@ -28,20 +28,15 @@ class MyApp extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: Center(
-              child: Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                    color: Colors.orangeAccent,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20)),
-                    border: Border.all(color: Colors.black, width: 2),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey, blurRadius: 51, spreadRadius: 7)
-                    ]),
-              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                Expanded(flex:2,child: Container(width: 100,height: 90,color: Colors.red,)),
+                Expanded(flex:5,child: Container(width: 100,height: 90,color: Colors.yellow,)),
+                Expanded(flex:5,child: Container(width: 100,height: 90,color: Colors.cyan,)),
+                Expanded(flex:2,child: Container(width: 100,height: 90,color: Colors.green,))
+
+              ]),
             ),
           )),
     );
