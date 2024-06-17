@@ -24,31 +24,10 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.blue,
           ),
           //ListView.builder is used to like recyclerview
-          body: Container(
-            child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: Container(
-                      width: 50,
-                      height: 50,
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/image.jpeg"),
-                        radius: 50,
-                      ),
-                    ),
-                    title: Text("${listView[index]}"),
-                    subtitle: Text("subtitle"),
-                    trailing: Icon(Icons.add),
-                  );
-                },
-                separatorBuilder: (context, index) {
-                  return Divider(
-                    height: 2,
-                    thickness: 1,
-                    color: Colors.grey,
-                  );
-                },
-                itemCount: listView.length),
+          body: Center(
+            child: Container(
+              child: Text("Hello World",style:TextStyle(fontFamily: 'Font_Main',fontSize: 50,fontWeight: FontWeight.w300),),
+            ),
           )),
     );
   }
