@@ -29,13 +29,15 @@ class MyApp extends StatelessWidget {
           ),
           //ListView.builder is used to like recyclerview
           body: Center(
-            child: Container(
-              child: Text(
-                "Hello World",
-                style: TextStyle(
-                    fontFamily: 'Font_Main',
-                    fontSize: 50,
-                    fontWeight: FontWeight.w300),
+            child: Card(
+              shadowColor: Colors.orangeAccent,
+              elevation: 40,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  "Hello Tushar!!",
+                  style: TextStyle(fontFamily: 'Font_Main', fontSize: 40),
+                ),
               ),
             ),
           )),
