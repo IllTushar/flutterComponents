@@ -1,5 +1,5 @@
 import 'dart:ffi';
-
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var listView = ['Ram', "Mohan", "Rohit", "Sohan"];
+    // Set the status bar color
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.green, // Set your desired color here
+    ));
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
@@ -26,7 +30,13 @@ class MyApp extends StatelessWidget {
           //ListView.builder is used to like recyclerview
           body: Center(
             child: Container(
-              child: Text("Hello World",style:TextStyle(fontFamily: 'Font_Main',fontSize: 50,fontWeight: FontWeight.w300),),
+              child: Text(
+                "Hello World",
+                style: TextStyle(
+                    fontFamily: 'Font_Main',
+                    fontSize: 50,
+                    fontWeight: FontWeight.w300),
+              ),
             ),
           )),
     );
