@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 void main() {
   runApp(MaterialApp(
     home: MyApp(),
@@ -35,7 +36,29 @@ class MyApp extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 50,
-                child: Center(child: Text("Current time: ${DateFormat('yMMMMEEEEd').format(time)}")),
+                child: Center(
+                    child: Text(
+                        "Current time: ${DateFormat('yMMMMEEEEd').format(time)}")),
+              ),
+              Container(
+                height: 30,
+              ),
+              Container(
+                child: ElevatedButton(
+                    onPressed: () async {
+                      DateTime? dateTime = await showDatePicker(
+                          context: context,
+                          firstDate: DateTime(2019),
+                          lastDate: DateTime.now());
+
+                      if (dateTime != null) {
+                        print(dateTime);
+                      }
+                    },
+                    child: const Text(
+                      "Date Picker",
+                      style: TextStyle(fontFamily: 'Font_Main'),
+                    )),
               )
             ],
           )),
